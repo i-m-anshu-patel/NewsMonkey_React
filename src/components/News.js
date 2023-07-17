@@ -57,7 +57,7 @@ export class News extends Component {
                 <h2 className='my-3 text-center'>NewsMonkey - Top Headlines</h2>
                 {this.state.loading && <Loader />}
                 <div className='row'>
-                    {!this.state.loading && this.state.articles.map((element) => {
+                    {!this.state.loading && this.state.articles && this.state.articles.length && this.state.articles.map((element) => {
                         return <div className='col-md-4' key={element.url}>
                             <NewsItem title={element.title ? element.title.slice(0, 45) : "No title"} description={element.description ? element.description : "Some Description"}
                                 imageUrl={element.urlToImage && element.urlToImage !== 0 ? element.urlToImage : 'https://i.ytimg.com/vi/3dRQ9JApJbs/maxresdefault.jpg'}
